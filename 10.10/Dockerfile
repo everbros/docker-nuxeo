@@ -17,8 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libreoffice \
     ffmpeg \
     x264 \
+    rsync \
+    grsync \
  && rm -rf /var/lib/apt/lists/*
-
 
 # Remove setuid/setgid binaries from images for security
 RUN find / -perm 6000 -type f -exec chmod a-s {} \; || true
